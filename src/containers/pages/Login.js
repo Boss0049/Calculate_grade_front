@@ -14,7 +14,6 @@ function Login(props) {
     axios
       .post("/users/login", { username, password })
       .then((res) => {
-        LocalStorageService.setToken(res.data.accessToken);
         props.setRole("user");
         notification.success({
           message: "เข้าสู่ระบบสำเร็จแล้ว",
